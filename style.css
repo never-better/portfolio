@@ -234,7 +234,7 @@ p{
 }
 
 .skill{
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .skillset__left{
@@ -270,4 +270,8 @@ p{
 
 .tools, .etc{
   padding:20px
+}
+
+.tools_list, .etc__list{
+  padding: 0;
 }

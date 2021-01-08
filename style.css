@@ -19,7 +19,7 @@
   --font-micro: 14px;
 
   /* Font weight  */
-  --wight-bold:700px;
+  --weight-bold:700px;
   --weight-medium:500px;
   --weight-light:300px;
 
@@ -27,10 +27,14 @@
   --size-border-radius:4px;
 }
 
-/* Universal Tags */
+  /* Universal Tags */
 *{
   box-sizing: border-box;
+
+  /* Animation duration*/
+  --animation-duration: 300ms;
 }
+
 
 body{
   margin: 0;
@@ -40,7 +44,7 @@ body{
 
 a{
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 ul{
@@ -94,7 +98,7 @@ p{
   justify-content: space-between;
   background: var(--color-grey);
   align-items: center;
-  padding: 8px
+  padding: 8px;
 }
 
 .navbar__menu{
@@ -150,3 +154,61 @@ p{
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
 }
+
+/* Section common */
+.section{
+  padding:50px;
+  text-align: center;
+  max-width: 1200px;
+  margin:auto;
+}
+
+/* About */
+.about__majors{
+  display: flex;
+  justify-content: space-between;
+  margin:80px 0;
+}
+
+.major__icon{
+  width: 170px;
+  height: 170px;
+  line-height:  170px;
+  font-size: 65px;
+  background-color: var(--color-white);
+  margin:auto;
+  color: var(--color-black);
+  border: 1px solid var(--color-grey);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon i{
+  transition: all var(--animation-duration) ease;
+}
+
+.major__icon:hover i{
+  color:var(--color-dark-grey);
+  transform: scale(1.1);
+}
+
+.major__title, .majot__description{
+  color:var(--color-dark-grey)
+}
+
+.majot__description{
+  font-size: var(--font-small);
+}
+
+.school{
+  display:flex;
+  position: relative;
+  left: 30%;
+  align-items: center;
+}
+
+.school__name{
+  font-size: var(--font-medium);
+  margin: 0 16px;
+}
+

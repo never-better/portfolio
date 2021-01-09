@@ -411,3 +411,31 @@ p{
   background-color: white;
   border-radius: var(--size-border-radius);
 }
+
+/* Contact */
+
+#contact{
+  background-color: var(--color-black);
+}
+
+
+
+.contact_title, 
+.contact_email, 
+.contact_links,
+.contact_right{
+  color: var(--color-white);
+}
+
+.fa-github{
+  color:var(--color-white);
+}
+
+.contact_links{
+  font-size: var(--font-large);
+  margin: 24px
+}
+
+.contact_links i:hover{
+  transform: scale(1.1);
+}

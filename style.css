@@ -117,13 +117,20 @@ p{
   border-radius: var(--size-border-radius);
 }
 
-.navbar__menu__item.active{
-  border: 1px solid var(--color-white);
-}
+
 
 .navbar__menu__item:hover{
   background-color: var(--color-light-grey);
 
+}
+
+.navbar__toggle-btn{
+  position: absolute;
+  top: 12px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-black);
+  display: none;
 }
 
 /* Home */
@@ -211,8 +218,7 @@ p{
 
 .school{
   display:flex;
-  position: relative;
-  left: 30%;
+  justify-content: center;
   align-items: center;
 }
 
@@ -444,3 +450,47 @@ p{
 .contact_links i:hover{
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px){
+.navbar__toggle-btn{
+  display: block;
+  }
+  #navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu{
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors{
+    flex-direction: column;
+  }
+
+  .major{
+    margin-bottom: 30px;
+  }
+
+  .skillset{
+    flex-direction: column;
+  }
+
+  .school{
+    flex-direction: column;
+  }
+
+.project{
+  flex-grow: 0.8;
+}
+
+.testimonial__avatar{
+  width: 80px;
+  height: 80px;
+}
+}
+
+/* media query 안에는 최소한의 정보만 들어가는 것이 좋다 */

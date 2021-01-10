@@ -167,6 +167,11 @@ p{
   margin:auto;
 }
 
+.section__container2{
+  max-width: 1500px;
+  margin:auto;
+}
+
 /* About */
 .about__majors{
   display: flex;

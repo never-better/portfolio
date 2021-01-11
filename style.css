@@ -106,6 +106,7 @@ p{
   padding: 8px;
   background-color: transparent;
   transition: all var(--animation-duration);
+  z-index: 1;
 }
 
 
@@ -193,6 +194,10 @@ p{
 }
 
 /* About */
+#about{
+  padding-top: 80px;
+}
+
 .about__majors{
   display: flex;
   justify-content: space-between;
@@ -244,6 +249,7 @@ p{
 
 #skills{
   background-color: var(--color-light-grey);
+  padding-top: 80px;
 }
 
 .skillset{
@@ -301,6 +307,10 @@ p{
 }
 
 /* Travel */
+#travel{
+padding-top: 80px;
+}
+
 .travel__categories{
   margin:40px;
 }
@@ -403,6 +413,7 @@ p{
 /* Testimonial */
 #testimonials{
   background-color: var(--color-light-grey);
+  padding-top: 80px;
 }
 
 .testimonials{

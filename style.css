@@ -6,6 +6,9 @@
   --color-dark-grey:#5E5E5D;
   --color-grey:#D3D3D3;
   --color-light-grey:#F0F0F0;
+  --color-white-grey:#FAFAFA;
+  --color-medium-grey:#BBBBBB;
+  --color-large-grey:#A0A0A0;
   --color-yellow:#FFFF6C;
   --color-illuminating:#F8D948;
   --color-classic-blue:#0F4C81;
@@ -94,10 +97,20 @@ p{
 
 /* Navbar */
 #navbar {
+  position: fixed;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   background: var(--color-grey);
   align-items: center;
+  padding: 8px;
+  background-color: transparent;
+  transition: all var(--animation-duration);
+}
+
+
+#navbar.navbar--bright{
+  background-color: var(--color-white-grey);
   padding: 8px;
 }
 
@@ -136,7 +149,7 @@ p{
 /* Home */
 #home{
   background: url('images/la\ youtak_back.jpg') center/cover no-repeat;
-  padding:40px 40px 20px;
+  padding:120px 40px 20px;
   text-align:  center;
 }
 
@@ -230,12 +243,12 @@ p{
 /* Skill */
 
 #skills{
-  background-color: var(--color-illuminating);
+  background-color: var(--color-light-grey);
 }
 
 .skillset{
   display: flex;
-  background-color: var(--color-classic-blue);
+  background-color: var(--color-grey);
   color: white;
   margin:20px 0;
 }
@@ -250,12 +263,12 @@ p{
 
 .skillset__left{
   flex-basis: 60%;
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-large-grey);
   padding: 20px 40px;
 }
 
 .skillset__right{
-  flex-basis: 40%;
+  flex-basis: 45%;
 }
 
 .skill__bar{
@@ -276,7 +289,7 @@ p{
 }
 
 .tools{
-  background-color: var(--color-grey);
+  background-color: var(--color-medium-grey);
 }
 
 .tools, .etc{

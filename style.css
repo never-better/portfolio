@@ -353,8 +353,14 @@ padding: 80px 0;
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    opacity: 1;
+    transition: all var(--animation-duration) ease-out;
   }
 
+  .travel__projects.anim-out{
+    opacity: 0;
+    transform: scale(0.9) translateY(40px);
+  }
 
   .project{
     position: relative;
@@ -367,6 +373,10 @@ padding: 80px 0;
     color: white;
     background-color: white;
   }
+
+.project.invisible{
+  display: none;
+}
 
   .project_img{
     max-width: 100%;

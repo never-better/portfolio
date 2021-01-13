@@ -7,10 +7,12 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', ()=> {
   if(window.scrollY > navbarHeight){
     navbar.classList.add('navbar--bright');
+    navbarMenu.classList.remove('open');
   } else{
     navbar.classList.remove('navbar--bright');
   }
 });
+
 
 // Hand Scrolling when tapping on the navbar menu
 
@@ -22,10 +24,14 @@ navbar.addEventListener('click', (event) => {
     return;
   }
 
-  console.log(event.target.dataset.link);
-
   scrollIntoView(link);
 });
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener ('click', (event) =>{
+  navbarMenu.classList.toggle('open');
+})
 
 // Handle contact button on home
 const homeContact = document.querySelector('.home__contact');

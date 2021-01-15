@@ -7,7 +7,6 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', ()=> {
   if(window.scrollY > navbarHeight){
     navbar.classList.add('navbar--bright');
-    navbarMenu.classList.remove('open');
   } else{
     navbar.classList.remove('navbar--bright');
   }
@@ -22,7 +21,7 @@ navbar.addEventListener('click', (event) => {
   if(link == null){
     return;
   }
-
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });
 
@@ -103,8 +102,66 @@ workBtnContainer.addEventListener('click', (e)=> {
 
 
 
-// function
+const sectionIDs = [
+  '#home', 
+  '#about', 
+  '#skills',
+  '#travel', 
+  '#testimonials',
+  '#contact' 
+];
+
+const sections = sectionIDs.map(id => document.querySelector(id));
+const navItems = sectionIDs.map(id => 
+  document.querySelector(`[data-link="${id}"]`)
+  );
+
+  let selectedNavIndex = 0;
+  let selectedNavItem = navItems[0];
+
+  function selectNavItem(selected) {
+    selectedNavItem.classList.remove('active');
+    selectedNavItem = selected;
+    selectedNavItem.classList.add('active');
+  }
+
+
 function scrollIntoView(selector){
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior : 'smooth'})
+  selectNavItem(navItems[sectionIDs.indexOf(selector)]);
 }
+
+  const observerOptions = {
+    root: null,
+    rootMargine: '0px',
+    threshold: 0.3,
+  }
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting && entry.intersectionRatio > 0){
+        const index = sectionIDs.indexOf(`#${entry.target.id}`);
+        if(entry.boundingClientRect.y < 0 ){
+          selectedNavIndex = index + 1;
+        } else{
+          selectedNavIndex = index - 1;
+        }
+      }
+    });
+  };
+
+
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  sections.forEach(section => observer.observe(section));
+
+  window.addEventListener('wheel', ()=>{
+    if(window.scrollY === 0){
+      selectedNavIndex = 0;
+    } else if (Math.round(window.scrollY + window.innerHeight)
+      >= document.body.clientHeight){
+      selectedNavIndex = navItems.length - 1;
+    }
+    selectNavItem(navItems[selectedNavIndex]);  
+  })

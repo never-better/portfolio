@@ -119,6 +119,10 @@ p{
   display: flex;
 }
 
+.navbar__menu__item.active {
+  opacity: 0.5;
+}
+
 .navbar__logo{
   font-size: var(--font-medium);
   font-weight: var(--weight-medium);
@@ -132,7 +136,9 @@ p{
   border-radius: var(--size-border-radius);
 }
 
-
+.navbar__menu__item.actibe{
+  border: 1px solid white;
+}
 
 .navbar__menu__item:hover{
   background-color: var(--color-light-grey);
@@ -604,5 +610,7 @@ font-size: var(--font-medium);
   height: 50px;
   font-size: 30px;
 }
+}
 
 /* media query 안에는 최소한의 정보만 들어가는 것이 좋다 */
+
